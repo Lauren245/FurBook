@@ -1,6 +1,6 @@
 /*this file will handle tasks associated with pulling an appointment
     from local storage and putting it on the index.html page */
-const apptArray = [];
+// const apptArray = [];
 
 /*TODO: It may be a good idea to provide a way to filter these dates compared to the current date
     because appointments in the future may  */
