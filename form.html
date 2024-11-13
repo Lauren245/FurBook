@@ -9,36 +9,40 @@
     <link rel="stylesheet" href="assets/CSS/style.css"/>
   </head>
   <body>
-    <h1>Hello, world!</h1>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
     <script src="./assets/JS/appointment.js"></Script>
     <script src="./assets/JS/form.js"></Script>
     <script src="./assets/JS/storage.js"></script>
 
+    <h1>Please fill in this form with the required information</h1>
     <form>
-      <input type="datetime" type="text">
-      <h1>Owner Info</h1>
-      <div>
-      <label>Name:</label>
-      <input type="text">
+      <div class="mb-3">
+        <label for="dateTime" class="form-label">Date and Time:</label> 
+        <input type="datetime-local" class="form-control" id="dateTime" name="dateTime" required>
+        <br>
+        <label for="ownerName" class="form-label">Name:</label> 
+        <input type="text" class="form-control" id="ownerName" name="ownerName" required>
+        <br>
+        <label for="phoneNumber" class="form-label">Phone Number:</label> 
+        <input type="text" class="form-control" id="phoneNumber" name="phoneNumber" required>
+        <br>
+        <label for="petName" class="form-label">Pet Name:</label> 
+        <input type="text" class="form-control" id="petName" name="petName" required>
+        <br>
+        <label for="breed" class="form-label">Breed:</label> 
+        <input type="text" class="form-control" id="breed" name="breed" required>
+        <br>
+        <label for="age" class="form-label">Pet Age:</label>
+        <input type="text" class="form-control" id="age" name="age" required>
+        <br>
+        <label for="serviceName" class="form-label">Service Name:</label> 
+        <input type="text" class="form-control" id="serviceName" name="serviceName" required>
+        <br>
+        <label for="serviceType" class="form-label">Service Type:</label> 
+        <input type="text" class="form-control" id="serviceType" name="serviceType" required>
+        <br>
+        <input type="submit" class="btn btn-primary" id="sumbitButton" name="sumbitButton"></input>
       </div>
-      Phone Number: <input type="text">
-      <h1>Pet Info</h1>
-      Pet Name: <input type="text">
-      Breed: <input type="text">
-      Pet Age: <input type="text">
-      <br>
-      <h1>Service</h1>
-      Service Name: <input type="text">
-      Service Type: <input type="text">
-      <br>
-      <label>Date and Time</label>
-      <select>
-        <option>11:30am</option>
-        <option>12:00pm</option>
-        <option>1:00pm</option>
-      </select>
-
     </form>
 
   </body>
