@@ -13,26 +13,36 @@
     <script src="./assets/JS/appointment.js"></Script>
     <script src="./assets/JS/form.js"></Script>
     <script src="./assets/JS/storage.js"></script>
-    
+
     <h1>Please fill in this form with the required information</h1>
     <form>
-      <label>Date and Time:</label> 
-      <input type="datetime-local" type="text" id="dateTime">
-      <label>Name:</label> 
-      <input type="text" id="ownerName">
-      <label>Phone Number:</label> 
-      <input type="text" id="phoneNumber">
-      <label>Pet Name:</label> 
-      <input type="text" id="petName">
-      <label>Breed:</label> 
-      <input type="text" id="breed">
-      <label>Pet Age:</label>
-      <input type="text" id="age">
-      <label>Service Name:</label> 
-      <input type="text" id="serviceName">
-      <label>Service Type:</label> 
-      <input type="text" id="serviceType">
-      <submit type="button" id="sumbitButton">submit</submit>
+      <div class="mb-3">
+        <label for="dateTime" class="form-label">Date and Time:</label> 
+        <input type="datetime-local" class="form-control" id="dateTime" name="dateTime" required>
+        <br>
+        <label for="ownerName" class="form-label">Name:</label> 
+        <input type="text" class="form-control" id="ownerName" name="ownerName" required>
+        <br>
+        <label for="phoneNumber" class="form-label">Phone Number:</label> 
+        <input type="text" class="form-control" id="phoneNumber" name="phoneNumber" required>
+        <br>
+        <label for="petName" class="form-label">Pet Name:</label> 
+        <input type="text" class="form-control" id="petName" name="petName" required>
+        <br>
+        <label for="breed" class="form-label">Breed:</label> 
+        <input type="text" class="form-control" id="breed" name="breed" required>
+        <br>
+        <label for="age" class="form-label">Pet Age:</label>
+        <input type="text" class="form-control" id="age" name="age" required>
+        <br>
+        <label for="serviceName" class="form-label">Service Name:</label> 
+        <input type="text" class="form-control" id="serviceName" name="serviceName" required>
+        <br>
+        <label for="serviceType" class="form-label">Service Type:</label> 
+        <input type="text" class="form-control" id="serviceType" name="serviceType" required>
+        <br>
+        <input type="submit" class="btn btn-primary" id="sumbitButton" name="sumbitButton"></input>
+      </div>
     </form>
 
   </body>

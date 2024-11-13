@@ -16,7 +16,7 @@ submitButton.addEventListener('click', function (event){
 
     const ownerName = ownerNameInput.value;
     const phoneNumber = phoneNumberInput.value;
-    const petName = petAgeInput.value;
+    const petName = petNameInput.value;
     const petBreed = petBreedInput.value;
     const petAge = petAgeInput.value;
     const dateTime = dateTimeInput.value;
