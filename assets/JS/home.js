@@ -2,9 +2,8 @@
     from local storage and putting it on the index.html page */
 const apptArray = [];
 
-/*TODO: It may be a good idea to provide a way to filter these dates compared to the current date
-    because appointments in the future may  */
-
+/*TODO (in future): It may be a good idea to provide a way to filter these dates compared to the current date
+    because appointments in the future may be more relevant*/
 
 function sortByTime(){
     /*This arrow function is used to find the difference between the dates
@@ -14,11 +13,6 @@ function sortByTime(){
     return apptArray.sort((a,b) => a.dayAndTime.dateTime - b.dayAndTime.dateTime);
 }
 
-//!!! This function is not currently being used
-function isDate(obj){
-    return Object.prototype.toString.call(obj) === "[object Date]";
-}
-
 function outputArray(){
     for(let i = 0; i < apptArray.length; i++){
         console.log("appointment " + (i + 1) + ": \n" + "owner:" +  JSON.stringify(apptArray[i].owner) + '\n pet: ' + JSON.stringify(apptArray[i].pet)
@@ -26,17 +20,14 @@ function outputArray(){
             "\n date and time (Locale String): " + apptArray[i].dayAndTime.dateTime.toLocaleString());
         console.log("------------------------------------------");
         //string variations
-        //JSON.stringify(apptArray[i].dayAndTime)
-        //apptArray[i].dayAndTime.dateTime.toLocaleString()
+        //JSON.stringify(apptArray[i].dayAndTime) : shows the time in UTC
+        //apptArray[i].dayAndTime.dateTime.toLocaleString() : converts time to local time and alters output to improve readability.
     }
 }
 
-//create test data
-//!!! We will need to standardize services if we want to be able to sort by them. This could be done using a select in the form
-    //We would also need a form select that will show the service names that correspond to the service type the user has selected.
-
+//Create Test Data
 //https://www.w3schools.com/js/js_dates.asp
-//these times are not adjusted for time zones
+//the times in this test data are not adjusted for time zones. When a form is used for input, the times will be adjusted properly.
 
 apptArray.push(createAppointment(
     createOwner('John', '456-123-5632'),
@@ -111,10 +102,9 @@ apptArray.push(createAppointment(
     createDayAndTime('2024-12-05T07:00:00Z')
 ));
 
-//call functions
+//Call Functions
 console.log("Array before sort: ");
 outputArray()
 sortByTime();
 console.log("Array after sort: ");
 outputArray()
-console.log(JSON.stringify(apptArray[6])); //this person is being added by passing a new Date object to createDayAndTime (not a string).
