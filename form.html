@@ -16,29 +16,20 @@
     <script src="./assets/JS/storage.js"></script>
 
     <form>
-      <input type="datetime" type="text">
+      <label>Date and Time:</label>
+      <input type="datetime-local" type="text" id="dateTime">
       <h1>Owner Info</h1>
-      <div>
       <label>Name:</label>
-      <input type="text">
-      </div>
-      Phone Number: <input type="text">
+      <input type="text" id="ownerName">
+      Phone Number: <input type="text" id="phoneNumber">
       <h1>Pet Info</h1>
-      Pet Name: <input type="text">
-      Breed: <input type="text">
-      Pet Age: <input type="text">
-      <br>
+      Pet Name: <input type="text" id="petName">
+      Breed: <input type="text" id="breed">
+      Pet Age: <input type="text" id="age">
       <h1>Service</h1>
-      Service Name: <input type="text">
-      Service Type: <input type="text">
-      <br>
-      <label>Date and Time</label>
-      <select>
-        <option>11:30am</option>
-        <option>12:00pm</option>
-        <option>1:00pm</option>
-      </select>
-
+      Service Name: <input type="text" id="serviceName">
+      Service Type: <input type="text" id="serviceType">
+      <submit type="button" id="sumbitButton">submit</submit>
     </form>
 
   </body>
