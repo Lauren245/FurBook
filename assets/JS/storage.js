@@ -1,6 +1,6 @@
 /*This file will handle reading and writing to local storage.*/
 //Create variables to accept the userInputs from the html forum
-const ownerNameInput = document.querySelector('#ownerName');
+/*const ownerNameInput = document.querySelector('#ownerName');
 const phoneNumberInput = document.querySelector('#phoneNumber');
 const petNameInput = document.querySelector('#petName');
 const petBreedInput = document.querySelector('#breed');
@@ -8,10 +8,10 @@ const petAgeInput = document.querySelector('#age');
 const dateTimeInput = document.querySelector('#dateTime');
 const serviceNameInput = document.querySelector('#serviceName');
 const serviceTypeInput = document.querySelector('#serviceType');
-const submitButton = document.querySelector('#sumbitButton');
+const submitButton = document.querySelector('#sumbitButton');*/
 
 //create an event when submittion button is clicked to store inputs into local variables for local storage
-submitButton.addEventListener('click', function (event){
+/*submitButton.addEventListener('click', function (event){
     event.preventDefault();
 
     const ownerName = ownerNameInput.value;
@@ -24,16 +24,11 @@ submitButton.addEventListener('click', function (event){
     const serviceType = serviceTypeInput.value;
 
     const appointmentInfo={
-        ownerName,
-        phoneNumber,
-        petName,
-        petBreed,
-        petAge,
-        dateTime,
-        serviceName,
-        serviceType
-    };
+    };*/
+    //const appointmentArray = Object.values(appointmentInfo);
+   // console.log(appointmentArray);    
+   // localStorage.setItem('appointmentInfo', JSON.stringify(appointmentInfo));
+//})
 
-    localStorage.setItem('appointmentInfo', JSON.stringify(appointmentInfo));
-
-})
+    const appointmentInfo = localStorage.getItem('appointmentInfo');
+    console.log(appointmentInfo);
