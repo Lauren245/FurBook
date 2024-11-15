@@ -12,7 +12,7 @@ function createService(name, type){
 }
 
 function createDayAndTime(dateTime){
-    return {dateTime: new Date(dateTime)}
+    return {dateTime: new Date(dateTime)};
 }
 
 function createAppointment(owner, pet, service, dayAndTime){
@@ -23,6 +23,8 @@ function createAppointment(owner, pet, service, dayAndTime){
         dayAndTime
     };
 };
+
+
 
 
 
