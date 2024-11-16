@@ -17,29 +17,30 @@
         <input type="datetime-local" class="form-control" id="dateTime" name="dateTime" required>
         <br>
         <label for="ownerName" class="form-label">Name:</label> 
-        <input type="text" class="form-control" id="ownerName" name="ownerName" required>
+        <input type="text" class="form-control" id="ownerName" name="ownerName" onkeydown="javascript: return [/^[A-Z a-z]+$/, 'Backspace','Delete','ArrowLeft','ArrowRight'].includes(event.code) ? true: isNaN(event.key)" required>
         <br>
         <label for="phoneNumber" class="form-label">Phone Number:</label> 
-        <input type="number" class="form-control" id="phoneNumber" name="phoneNumber"  required>
+        <input type="number" class="form-control" id="phoneNumber" name="phoneNumber" onkeydown="javascript: return ['Backspace','Delete','ArrowLeft','ArrowRight'].includes(event.code) ? true: !isNaN(Number(event.key))" required>
         <br>
         <label for="petName" class="form-label">Pet Name:</label> 
-        <input type="text" class="form-control" id="petName" name="petName" required>
+        <input type="text" class="form-control" id="petName" name="petName" onkeydown="javascript: return [/^[A-Z a-z]+$/, 'Backspace','Delete','ArrowLeft','ArrowRight'].includes(event.code) ? true: isNaN(event.key)" required>
         <br>
         <label for="breed" class="form-label">Breed:</label> 
-        <input type="text" class="form-control" id="breed" name="breed" required>
+        <input type="text" class="form-control" id="breed" name="breed" onkeydown="javascript: return [/^[A-Z a-z]+$/, 'Backspace','Delete','ArrowLeft','ArrowRight'].includes(event.code) ? true: isNaN(event.key)" required>
         <br>
         <label for="age" class="form-label">Pet Age:</label>
-        <input type="number" class="form-control" id="age" name="age" required>
+        <input type="number" class="form-control" id="age" name="age" onkeydown="javascript: return ['Backspace','Delete','ArrowLeft','ArrowRight'].includes(event.code) ? true: !isNaN(Number(event.key))" required>
         <br>
         <label for="serviceName" class="form-label">Service Name:</label> 
-        <input type="text" class="form-control" id="serviceName" name="serviceName" required>
+        <input type="text" class="form-control" id="serviceName" name="serviceName" onkeydown="javascript: return [/^[A-Z a-z]+$/, 'Backspace','Delete','ArrowLeft','ArrowRight'].includes(event.code) ? true: isNaN(event.key)" required>
         <br>
         <label for="serviceType" class="form-label">Service Type:</label> 
-        <input type="text" class="form-control" id="serviceType" name="serviceType" required>
+        <input type="text" class="form-control" id="serviceType" name="serviceType" onkeydown="javascript: return [/^[A-Z a-z]+$/, 'Backspace','Delete','ArrowLeft','ArrowRight'].includes(event.code) ? true: isNaN(event.key)" required>
         <br>
-        <input type="submit" class="btn btn-primary" id="submitButton" name="sumbitButton">
+        <input type="submit" class="btn btn-primary" id="submitButton" name="submitButton">
       </div>
     </form>
+    <p id="error"></p>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
     <script src="./assets/JS/appointment.js"></Script>
     <script src="./assets/JS/testData.js"></script>
