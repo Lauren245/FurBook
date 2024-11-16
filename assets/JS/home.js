@@ -1,19 +1,25 @@
 /*this file will handle tasks associated with pulling an appointment
     from local storage and putting it on the index.html page */
 
+/* ***KNOWN BUGS***
+    put any bugs found in here:
+ */
 const mainContent = document.querySelector('main');
 
 
 //gets the contents of the local storage array and returns the array sorted by appointment date and time.
 function getStorageArray(){
     let appointments = JSON.parse(localStorage.getItem('appointmentInfo'));
-    /*This arrow function is used to find the difference between the dates
-     The array sort method sorts the array based on the results of the arrow function*/
-    /*https://chatgpt.com/share/67324451-5a8c-8012-8c7e-d26b3c1277e8 */
-    /*https://www.geeksforgeeks.org/arrow-functions-in-javascript/ */
-
-    //must be parsed into dates because local storage stores data as strings
-    return appointments.sort((a,b) => Date.parse(a.dayAndTime.dateTime) - Date.parse(b.dayAndTime.dateTime));
+    
+    if(appointments !== null){
+        /*This arrow function is used to find the difference between the dates
+        The array sort method sorts the array based on the results of the arrow function*/
+        /*https://chatgpt.com/share/67324451-5a8c-8012-8c7e-d26b3c1277e8 */
+        /*https://www.geeksforgeeks.org/arrow-functions-in-javascript/ */
+        //must be parsed into dates because local storage stores data as strings
+        return appointments.sort((a,b) => Date.parse(a.dayAndTime.dateTime) - Date.parse(b.dayAndTime.dateTime));
+    }
+    return appointments;
 }
 
 
@@ -66,8 +72,13 @@ function renderAppointments(){
             console.log("i = " + i);
 
             //DATE
-            dateHeadingEl.textContent = `Appointment Date and Time: `
-            dateEl.textContent = `Date: ${new Date(appointments[i].dayAndTime.dateTime.toLocaleString())}`;
+            /*This will most likely be taken care of in form validation. If this value is null, then
+            the use of toLocaleString will cause a console error and stop the data from rendering. */
+            if(appointments[i].dayAndTime.dateTime !== null){
+                dateHeadingEl.textContent = `Appointment Date and Time: `
+                dateEl.textContent = `Date: ${new Date(appointments[i].dayAndTime.dateTime.toLocaleString())}`;
+            }
+            
            
             //OWNER
             ownerHeadingEl.textContent = `Owner:`;
