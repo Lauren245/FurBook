@@ -26,7 +26,7 @@ function getStorageArray(){
 // Create a function that handles the case where there are no appointments
 function noAppointments(){
     const noApptErr = document.createElement('p');
-    noApptErr.textContent = 'There are no appoinments'
+    noApptErr.textContent = 'There are no appointments'
     mainContent.appendChild(noApptErr);
 }
 
