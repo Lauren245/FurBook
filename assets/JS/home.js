@@ -24,6 +24,28 @@ function noAppointments(){
     mainContent.appendChild(noApptErr);
 }
 
+function generateElements(){
+    const listItemEl = document.createElement('li');
+
+    const sectionEl = document.createElement('section');
+    const h1El = document.createElement('h1');
+
+    const dateHeadingEl = document.createElement('h2');
+    const dateEl = document.createElement('p');
+
+    const ownerHeadingEl = document.createElement('h2');
+    const ownerNameEl = document.createElement('p');
+    const ownerPhoneEl = document.createElement('p');
+
+    const petHeadingEl = document.createElement('h2');
+    const petNameEl = document.createElement('p');
+    const petBreedEl = document.createElement('p');
+    const petAgeEl = document.createElement('p');
+
+    const serviceHeadingEl = document.createElement('h2')
+    const serviceNameEl = document.createElement('p');
+    const serviceTypeEl = document.createElement('p');
+}
 // TODO: Create a function called `renderAppointments` that renders the list of blog posts if they exist. If not, call the no posts function.
 function renderAppointments(){
     mainContent.innerHTML = '';
@@ -35,76 +57,90 @@ function renderAppointments(){
     if(appointments === null){
         noAppointments();
     }
-    //if the local storage is not an array (It will be in the future)
     else{
-        const listItemEl = document.createElement('li');
-        const sectionEl = document.createElement('section');
-        const h1El = document.createElement('h1');
-        const h2El = document.createElement('h2');
-        const pEl = document.createElement('p');
-
-        h1El.textContent = `appointment 1`;
-        h2El.textContent = `${appointments.dayAndTime}`;
-        //pEl.textContent = `${appointments[i].dateTime}`
-
-        mainContent.appendChild(sectionEl);
-
-        sectionEl.appendChild(h1El);
-        sectionEl.appendChild(h2El);
-        sectionEl.appendChild(pEl);
-
-        listItemEl.appendChild(sectionEl);
-        listEl.appendChild(listItemEl);
+        console.log("Appointments.length = " + appointments.length);
+        //console.log ("appointments = " + JSON.stringify(appointments));
+        for(let i = 0; i < appointments.length; i++){
         
-        console.log(listEl);
+            let apptNumber = i+1;
+
+            h1El.textContent = `appointment number ${apptNumber}`;
+            console.log("i = " + i);
+
+            //DATE
+            dateHeadingEl.textContent = `Appointment Date and Time: `
+            dateEl.textContent = `Date: ${new Date(appointments[i].dayAndTime.dateTime.toLocaleString())}`;
+           
+            //OWNER
+            ownerHeadingEl.textContent = `Owner:`;
+            ownerNameEl.textContent = `Name: ${appointments[i].owner.name}`;
+            ownerPhoneEl.textContent = `Phone Number: ${appointments[i].owner.phoneNumber}`;
+
+
+            //PET
+            petHeadingEl.textContent = 'Pet:';
+            petNameEl.textContent = `Name: ${appointments[i].pet.name}`;
+            petBreedEl.textContent = `Breed: ${appointments[i].pet.breed}`;
+            petAgeEl.textContent = `Age: ${appointments[i].pet.age}`;
+
+            //SERVICE
+            serviceHeadingEl.textContent  = `Service`;
+            serviceNameEl.textContent = `Service Name: ${appointments[i].service.name}`;
+            serviceTypeEl.textContent = `Service Type: ${appointments[i].service.type}`;
+
+
+            mainContent.appendChild(sectionEl);
+
+            sectionEl.appendChild(h1El);
+
+            sectionEl.appendChild(dateHeadingEl);
+            sectionEl.appendChild(dateEl);
+
+            sectionEl.appendChild(ownerHeadingEl);
+            sectionEl.appendChild(ownerNameEl);
+            sectionEl.appendChild(ownerPhoneEl);
+
+            sectionEl.appendChild(petHeadingEl);
+            sectionEl.appendChild(petNameEl);
+            sectionEl.appendChild(petBreedEl);
+            sectionEl.appendChild(petAgeEl);
+
+            sectionEl.appendChild(serviceHeadingEl);
+            sectionEl.appendChild(serviceNameEl);
+            sectionEl.appendChild(serviceTypeEl);
+
+            listItemEl.appendChild(sectionEl);
+            listEl.appendChild(listItemEl);
+            
+            console.log(listEl);
+        }
     }
-    // else{
-    //     console.log("Appointments.length = " + appointments.length);
-    //     //console.log ("appointments = " + JSON.stringify(appointments));
-    //     for(let i = 0; i < appointments.length; i++){
-    //         const listItemEl = document.createElement('li');
-
-    //         const sectionEl = document.createElement('section');
-    //         const h1El = document.createElement('h1');
-    //         const h2El = document.createElement('h2');
-    //         const pEl = document.createElement('p');
-
-    //         h1El.textContent = `appointment number ${appointments[i + 1]}`;
-    //         console.log("i = " + i);
-    //         h2El.textContent = `${appointments[i].dayAndTime}`;
-    //         //pEl.textContent = `${appointments[i].dateTime}`
-
-    //         mainContent.appendChild(sectionEl);
-    //         sectionEl.appendChild(h1El);
-    //         sectionEl.appendChild(h2El);
-    //         sectionEl.appendChild(pEl);
-
-    //         listItemEl.appendChild(sectionEl);
-    //         listEl.appendChild(listItemEl);
-            
-    //         console.log(listEl);
-
-    //         // const articleEl = document.createElement('article');
-    //         // const articleH2El = document.createElement('h2');
-    //         // //const pEl = document.createElement('p');
-    //         // const blockQuoteEl = document.createElement('blockquote');
-
-    //         // articleH2El.textContent = `${appointments[i].title}`;
-    //         // pEl.textContent = `${appointments[i].username}`;
-    //         // blockQuoteEl.textContent = `${appointments[i].content}`;
-
-    //         // articleEl.appendChild(articleH2El);
-    //         // articleEl.appendChild(pEl);
-    //         // articleEl.appendChild(blockQuoteEl);
-
-    //         // listItemEl.appendChild(articleEl);
-    //         // listEl.appendChild(listItemEl);
-            
-    //         // console.log(listEl);
-    //     }
-    // }
 
 }
 
 //call functions
 renderAppointments()
+
+    //if the local storage is not an array (It will be in the future)
+    // else{
+    //     const listItemEl = document.createElement('li');
+    //     const sectionEl = document.createElement('section');
+    //     const h1El = document.createElement('h1');
+    //     const h2El = document.createElement('h2');
+    //     const pEl = document.createElement('p');
+
+    //     h1El.textContent = `appointment 1`;
+    //     h2El.textContent = `${appointments.dayAndTime.dateTime}`;
+    //     //pEl.textContent = `${appointments[i].dateTime}`
+
+    //     mainContent.appendChild(sectionEl);
+
+    //     sectionEl.appendChild(h1El);
+    //     sectionEl.appendChild(h2El);
+    //     sectionEl.appendChild(pEl);
+
+    //     listItemEl.appendChild(sectionEl);
+    //     listEl.appendChild(listItemEl);
+        
+    //     console.log(listEl);
+    // }
