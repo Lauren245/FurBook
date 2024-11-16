@@ -11,7 +11,7 @@ const mainContent = document.querySelector('main');
 function getStorageArray(){
     let appointments = JSON.parse(localStorage.getItem('appointmentInfo'));
     
-    if(appointments !== null){
+    if(appointments !== null && appointments.length > 1){
         /*This arrow function is used to find the difference between the dates
         The array sort method sorts the array based on the results of the arrow function*/
         /*https://chatgpt.com/share/67324451-5a8c-8012-8c7e-d26b3c1277e8 */
