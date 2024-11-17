@@ -1,4 +1,5 @@
 /*This file will handle the form logic. */
+const error = document.querySelector('#error');
 const ownerNameInput = document.querySelector('#ownerName');
 const phoneNumberInput = document.querySelector('#phoneNumber');
 const petNameInput = document.querySelector('#petName');
@@ -7,31 +8,40 @@ const petAgeInput = document.querySelector('#age');
 const dateTimeInput = document.querySelector('#dateTime');
 const serviceNameInput = document.querySelector('#serviceName');
 const serviceTypeInput = document.querySelector('#serviceType');
-const submitButton = document.querySelector('#sumbitButton')//fix typo later
-
+const submitButton = document.querySelector('#submitButton')//fix typo later
+Inputs = [dateTimeInput, ownerNameInput, phoneNumberInput, petNameInput, petBreedInput, petAgeInput, serviceNameInput, serviceTypeInput]
+// event.preventDefault();
 //create an event when submittion button is clicked to store inputs into local variables for local storage
 submitButton.addEventListener('click', function (event){
-    event.preventDefault();
+    var  True = true
+    while (True === true) {
+        for (let i = 0; i < Inputs.length; i++) {
+            if (Inputs[i].value.length !== 0) {
+                event.preventDefault();
+            } else {
+                True = false
+                break
+            }}
 
-    //creates variables to hold the values given from the user's input
-    const ownerName = ownerNameInput.value;
-    const phoneNumber = phoneNumberInput.value;
-    const petName = petNameInput.value;
-    const petBreed = petBreedInput.value;
-    const petAge = petAgeInput.value;
-    const dateTime = dateTimeInput.value;
-    const serviceName = serviceNameInput.value;
-    const serviceType = serviceTypeInput.value;
-
-    //creates an object using functions from appointment.js 
-    const appointmentInfo= createAppointment(
-        createOwner(ownerName,phoneNumber),
-        createPet(petName,petBreed,petAge),
-        createService(serviceName,serviceType),
-        createDayAndTime(dateTime)
-    );
-
-    //sets appointmentInfo to localStorage
-    localStorage.setItem('appointmentInfo', JSON.stringify(appointmentInfo));
-
-})
+        if (!True === false) {
+            const ownerName = ownerNameInput.value;
+            const phoneNumber = phoneNumberInput.value;
+            const petName = petNameInput.value;
+            const petBreed = petBreedInput.value;
+            const petAge = petAgeInput.value;
+            const dateTime = dateTimeInput.value;
+            const serviceName = serviceNameInput.value;
+            const serviceType = serviceTypeInput.value;
+            //creates an object using functions from appointment.js 
+            const appointmentInfo= createAppointment(
+                createOwner(ownerName,phoneNumber),
+                createPet(petName,petBreed,petAge),
+                createService(serviceName,serviceType),
+                createDayAndTime(dateTime)
+            );
+            //sets appointmentInfo to localStorage
+            localStorage.setItem('appointmentInfo', JSON.stringify(appointmentInfo));
+            console.log(localStorage)
+            break
+    
+}}})  
