@@ -4,7 +4,7 @@
 /* ***KNOWN BUGS***
     put any bugs found in here:
  */
-const mainContent = document.querySelector('main');
+//const mainContent = document.querySelector('main');
 
 
 //gets the contents of the local storage array and returns the array sorted by appointment date and time.
