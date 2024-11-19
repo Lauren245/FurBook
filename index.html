@@ -18,7 +18,7 @@
         </div>
       </nav>
     </header>
-    <h1>Hello, world!</h1>
+  <!-- <template id="AppointmentTemplate"> -->
     <main>
       <div class="container mt-4">
         <h1 class="mb-4">Appointment List</h1>
@@ -26,7 +26,7 @@
         <a href="create_appointment.html" class="btn btn-primary mb-3">Add New Appointment</a>
 
         
-        <table class="table table-bordered">
+        <table class="table table-bordered" id = "ExistingAppointments">
             <thead>
                 <tr>
                     <th>Owner Name</th>
@@ -40,13 +40,26 @@
                 </tr>
             </thead>
             <tbody>
-              <tbody id="appointmentTableBody"></tbody>
+              <tbody class="AppointmentTableBody"></tbody>
               
               <!-- Appointments will be inserted here by JavaScript -->  
             </tbody>
         </table>
+        <template id="AppointmentTemplate">
+          <tr>
+            <td class="OwnerName"></td>
+            <td class="PhoneNumber"></td>
+            <td class = "PetName"></td>
+            <td class="PetBreed"></td>
+            <td class="PetAge"></td>
+            <td class="DateTime"></td>
+            <td class="ServiceName"></td>
+            <td class="ServiceType"></td>
+          </tr>
+        </template>
       </div>
     </main>
+  </template>
 
     <footer class="footer mt-auto py-3">
       <div class="container text-center text-white">&copy; FurBook</div>
