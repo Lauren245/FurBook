@@ -8,7 +8,8 @@
     <link rel="stylesheet" href="assets/CSS/reset.css" />
     <link rel="stylesheet" href="assets/CSS/style.css"/>
   </head>
-  <body>
+  <!--This ensures the body uses the flexbox layout and its min-height is set relative to the viewport. This places the footer at the bottom of the page. -->
+  <body class="d-flex flex-column min-vh-100"> 
     <header>
       <nav class="navbar">
         <div class="container-fluid">
@@ -17,10 +18,49 @@
         </div>
       </nav>
     </header>
-    <h1>Hello, world!</h1>
+  <template>
     <main>
-      
+      <div class="container mt-4">
+        <h1 class="mb-4">Appointment List</h1>
+
+        <a href="create_appointment.html" class="btn btn-primary mb-3">Add New Appointment</a>
+
+        
+        <table class="table table-bordered" id = "ExistingAppointments">
+            <thead>
+                <tr>
+                    <th>Owner Name</th>
+                    <td id="OwnerName"></td>
+                    <th>Phone Number</th>
+                    <td id="PhoneNumber"></td>
+                    <th>Pet Name</th>
+                    <td id = "PetName"></td>
+                    <th>Pet Breed</th>
+                    <td id="PetBreed"></td>
+                    <th>Pet Age</th>
+                    <td id="PetAge"></td>
+                    <th>Date & Time</th>
+                    <td id="Date&Time"></td>
+                    <th>Service Name</th>
+                    <td id="ServiceName"></td>
+                    <th>Service Type</th>
+                    <td id="ServiceType"></td>
+                </tr>
+            </thead>
+            <tbody>
+              <tbody id="appointmentTableBody"></tbody>
+              
+              <!-- Appointments will be inserted here by JavaScript -->  
+            </tbody>
+        </table>
+      </div>
     </main>
+  </template>
+
+    <footer class="footer mt-auto py-3">
+      <div class="container text-center text-white">&copy; FurBook</div>
+    </footer>
+
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
     <script src="./assets/JS/appointment.js"></Script>
     <script src="./assets/JS/storage.js"></script>

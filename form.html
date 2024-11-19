@@ -8,7 +8,8 @@
     <link rel="stylesheet" href="assets/CSS/reset.css" />
     <link rel="stylesheet" href="assets/CSS/style.css"/>
   </head>
-  <body class="d-flex flex-column min-vh-100"> <!--remove this before commit. It is already in the pending feature/footer PR.-->
+  <!--This ensures the body uses the flexbox layout and its min-height is set relative to the viewport. This places the footer at the bottom of the page. -->
+  <body class="d-flex flex-column min-vh-100">
     <header>
       <nav class="navbar">
         <div class="container-fluid">
@@ -17,94 +18,42 @@
         </div>
       </nav>
     </header>
-    <main class="container">
-      <h1 class="my-4">Please fill in this form with the required information</h1>
-      <form>
-        <div class="mb-3 row">
-          <label for="dateTime" class=" col-sm-2 col-form-label">Date and Time:</label>
 
-          <div class="col-sm-6 col-lg-8">
-            <input type="datetime-local" class="form-control" id="dateTime" name="dateTime" required>
-          </div>
-          
-          <br>
-        </div>
+    <h1>Please fill in this form with the required information</h1>
+    <form>
+      <div class="mb-3">
+        <label for="dateTime" class="form-label">Date and Time:</label> 
+        <input type="datetime-local" class="form-control" id="dateTime" name="dateTime" required>
+        <br>
+        <label for="ownerName" class="form-label">Name:</label> 
+        <input type="text" class="form-control" id="ownerName" name="ownerName" onkeydown="javascript: return [/^[A-Z a-z]+$/, 'Backspace','Delete','ArrowLeft','ArrowRight'].includes(event.code) ? true: isNaN(event.key)" required>
+        <br>
+        <label for="phoneNumber" class="form-label">Phone Number:</label> 
+        <input type="number" class="form-control" id="phoneNumber" name="phoneNumber" onkeydown="javascript: return ['Backspace','Delete','ArrowLeft','ArrowRight'].includes(event.code) ? true: !isNaN(Number(event.key))" required>
+        <br>
+        <label for="petName" class="form-label">Pet Name:</label> 
+        <input type="text" class="form-control" id="petName" name="petName" onkeydown="javascript: return [/^[A-Z a-z]+$/, 'Backspace','Delete','ArrowLeft','ArrowRight'].includes(event.code) ? true: isNaN(event.key)" required>
+        <br>
+        <label for="breed" class="form-label">Breed:</label> 
+        <input type="text" class="form-control" id="breed" name="breed" onkeydown="javascript: return [/^[A-Z a-z]+$/, 'Backspace','Delete','ArrowLeft','ArrowRight'].includes(event.code) ? true: isNaN(event.key)" required>
+        <br>
+        <label for="age" class="form-label">Pet Age:</label>
+        <input type="number" class="form-control" id="age" name="age" onkeydown="javascript: return ['Backspace','Delete','ArrowLeft','ArrowRight'].includes(event.code) ? true: !isNaN(Number(event.key))" required>
+        <br>
+        <label for="serviceName" class="form-label">Service Name:</label> 
+        <input type="text" class="form-control" id="serviceName" name="serviceName" onkeydown="javascript: return [/^[A-Z a-z]+$/, 'Backspace','Delete','ArrowLeft','ArrowRight'].includes(event.code) ? true: isNaN(event.key)" required>
+        <br>
+        <label for="serviceType" class="form-label">Service Type:</label> 
+        <input type="text" class="form-control" id="serviceType" name="serviceType" onkeydown="javascript: return [/^[A-Z a-z]+$/, 'Backspace','Delete','ArrowLeft','ArrowRight'].includes(event.code) ? true: isNaN(event.key)" required>
+        <br>
+        <input type="submit" class="btn btn-primary" id="submitButton" name="submitButton">
+      </div>
+    </form>
+    <p id="error"></p>
 
-        <div class="mb-3 row">
-          <label for="ownerName" class="col-sm-2 col-form-label">Name:</label> 
-
-          <div class="col-sm-6 col-lg-8">
-            <input type="text" class="form-control" id="ownerName" name="ownerName" onkeydown="javascript: return [/^[A-Z a-z]+$/, 'Backspace','Delete','ArrowLeft','ArrowRight'].includes(event.code) ? true: isNaN(event.key)" required>
-          </div>
-
-          <br>
-        </div>
-
-        <div class="mb-3 row">
-          <label for="phoneNumber" class="col-sm-2 col-form-label">Phone Number:</label> 
-
-          <div class="col-sm-6 col-lg-8">
-            <input type="number" class="form-control" id="phoneNumber" name="phoneNumber" onkeydown="javascript: return ['Backspace','Delete','ArrowLeft','ArrowRight'].includes(event.code) ? true: !isNaN(Number(event.key))" required>
-          </div>
-
-          <br>
-        </div>
-          
-        <div class="mb-3 row">
-          <label for="petName" class="col-sm-2 col-form-label">Pet Name:</label> 
-
-          <div class="col-sm-6 col-lg-8">
-            <input type="text" class="form-control" id="petName" name="petName" onkeydown="javascript: return [/^[A-Z a-z]+$/, 'Backspace','Delete','ArrowLeft','ArrowRight'].includes(event.code) ? true: isNaN(event.key)" required>
-          </div>
-
-          <br>
-        </div>
-          
-        <div class="mb-3 row">
-          <label for="breed" class="col-sm-2 col-form-label">Breed:</label> 
-
-          <div class="col-sm-6 col-lg-8">
-            <input type="text" class="form-control" id="breed" name="breed" onkeydown="javascript: return [/^[A-Z a-z]+$/, 'Backspace','Delete','ArrowLeft','ArrowRight'].includes(event.code) ? true: isNaN(event.key)" required>
-          </div>
-
-          <br>
-        </div>
-
-        <div class='mb-3 row'>
-          <label for="age" class="col-sm-2 col-form-label">Pet Age:</label>
-
-          <div class="col-sm-6 col-lg-8">
-            <input type="number" class="form-control" id="age" name="age" onkeydown="javascript: return ['Backspace','Delete','ArrowLeft','ArrowRight'].includes(event.code) ? true: !isNaN(Number(event.key))" required>
-          </div>
-
-          <br>
-        </div>
-
-        <div class="mb-3 row">
-          <label for="serviceName" class="col-sm-2 col-form-label">Service Name:</label>
-          
-          <div class="col-sm-6 col-lg-8"> 
-            <input type="text" class="form-control" id="serviceName" name="serviceName" onkeydown="javascript: return [/^[A-Z a-z]+$/, 'Backspace','Delete','ArrowLeft','ArrowRight'].includes(event.code) ? true: isNaN(event.key)" required>
-          </div>
-
-          <br>
-        </div>
-
-        <div class="mb-3 row">
-          <label for="serviceType" class="col-sm-2 col-form-label">Service Type:</label> 
-
-          <div class="col-sm-6 col-lg-8">
-            <input type="text" class="form-control" id="serviceType" name="serviceType" onkeydown="javascript: return [/^[A-Z a-z]+$/, 'Backspace','Delete','ArrowLeft','ArrowRight'].includes(event.code) ? true: isNaN(event.key)" required>
-          </div>
-
-          <br>
-        </div>
-        
-          <input type="submit" class="btn btn-primary" id="submitButton" name="submitButton">
-        </div>
-      </form>
-      <p id="error"></p>
-    </main>
+    <footer class="footer mt-auto py-3">
+      <div class="container text-center text-white">&copy; FurBook</div>
+    </footer>
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
     <script src="./assets/JS/appointment.js"></Script>
