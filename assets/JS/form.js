@@ -40,8 +40,8 @@ submitButton.addEventListener('click', function (event){
                 createDayAndTime(dateTime)
             );
             //sets appointmentInfo to localStorage
-            localStorage.setItem('appointmentInfo', JSON.stringify(appointmentInfo));
-            console.log(localStorage)
+            storeLocalStorage(appointmentInfo);
+           // console.log(localStorage)
             break
     
 }}})  
