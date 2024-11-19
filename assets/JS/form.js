@@ -41,10 +41,9 @@ submitButton.addEventListener('click', function (event){
                 createDayAndTime(dateTime)
             );
             //sets appointmentInfo to localStorage
-            feature/LocalStorageArray
             storeLocalStorage(appointmentInfo);
-           // console.log(localStorage)
+            //console.log(localStorage)
             break
 
     
-}})  
+}}})  
