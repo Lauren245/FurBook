@@ -5,8 +5,10 @@
     put any bugs found in here:
  */
 //const mainContent = document.querySelector('main');
+
 const templateEl = document.getElementById("AppointmentTemplate");
 const tableEl = document.querySelector(".AppointmentTableBody");
+
 
 
 //gets the contents of the local storage array and returns the array sorted by appointment date and time.
