@@ -19,3 +19,9 @@ FurBook helps pet groomers manage appointments, track services, and keep client 
 
 - **Appointment Overview**  
   View a list of all scheduled appointments for a specific day or week, complete with the pet's name, breed, age, and grooming service requested.
+
+![Screenshot of index.html page](./assets/indexhtml.png)
+![Screenshot of form.html page](./assets/formhtml.png)
+![Screenshot of data displayed on index.html page](./assets/datahtml.png)
+
+<a href="https://lauren245.github.io/FurBook/index.html">Click here to visit FurBook</a>
