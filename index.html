@@ -18,7 +18,7 @@
         </div>
       </nav>
     </header>
-  <template>
+    
     <main>
       <div class="container mt-4">
         <h1 class="mb-4">Appointment List</h1>
@@ -48,11 +48,23 @@
                 </tr>
             </thead>
             <tbody>
-              <tbody id="appointmentTableBody"></tbody>
+              <tbody class="AppointmentTableBody"></tbody>
               
               <!-- Appointments will be inserted here by JavaScript -->  
             </tbody>
         </table>
+        <template id="AppointmentTemplate">
+          <tr>
+            <td class="OwnerName"></td>
+            <td class="PhoneNumber"></td>
+            <td class = "PetName"></td>
+            <td class="PetBreed"></td>
+            <td class="PetAge"></td>
+            <td class="DateTime"></td>
+            <td class="ServiceName"></td>
+            <td class="ServiceType"></td>
+          </tr>
+        </template>
       </div>
     </main>
   </template>
