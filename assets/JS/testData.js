@@ -1,5 +1,5 @@
 //toggle tests (type true to enable and false to disable)
-let testDataEnabled = false;
+let testDataEnabled = true;
 
 if(testDataEnabled){
     //const apptArray = [];
