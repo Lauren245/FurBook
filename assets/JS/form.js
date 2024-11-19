@@ -10,20 +10,21 @@ const serviceNameInput = document.querySelector('#serviceName');
 const serviceTypeInput = document.querySelector('#serviceType');
 const submitButton = document.querySelector('#submitButton')//fix typo later
 Inputs = [dateTimeInput, ownerNameInput, phoneNumberInput, petNameInput, petBreedInput, petAgeInput, serviceNameInput, serviceTypeInput]
-// event.preventDefault();
 //create an event when submittion button is clicked to store inputs into local variables for local storage
+
+
 submitButton.addEventListener('click', function (event){
-    var  True = true
-    while (True === true) {
+// Checks each input for a value and prevents submission otherwise
+    while (true) {
         for (let i = 0; i < Inputs.length; i++) {
             if (Inputs[i].value.length !== 0) {
-                event.preventDefault();
+                continue
             } else {
-                True = false
-                break
+                return false
             }}
 
-        if (!True === false) {
+        if (true) {
+            event.preventDefault()
             const ownerName = ownerNameInput.value;
             const phoneNumber = phoneNumberInput.value;
             const petName = petNameInput.value;
@@ -40,8 +41,10 @@ submitButton.addEventListener('click', function (event){
                 createDayAndTime(dateTime)
             );
             //sets appointmentInfo to localStorage
+            feature/LocalStorageArray
             storeLocalStorage(appointmentInfo);
            // console.log(localStorage)
             break
+
     
-}}})  
+}})  
